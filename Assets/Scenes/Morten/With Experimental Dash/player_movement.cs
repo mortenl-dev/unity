@@ -3,8 +3,8 @@ using UnityEngine;
 public class player_movement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 16f;
+    private float speed = 4f;
+    private float jumpingPower = 8f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
@@ -30,6 +30,7 @@ public class player_movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //THIS MESSES WITH KNOCKBACK FROM THE SIDE
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
